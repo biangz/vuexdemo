@@ -6,14 +6,18 @@
         v-for="(item, index) in parent.answerList"
         :key="item.id"
         @click="chooseOption(index, item.id)">
-          <span class="option-item" :class="{'option-has-choosed': chooseNum == index}">{{index}}</span>
+          <span class="option-item" :class="{'option-has-choosed': chooseNum == index}"> · </span>
           {{item.con}}
         </li>
     </ul>
+    <p>{{count}}</p>
+    <button @click="next">下一题</button>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
@@ -25,12 +29,21 @@ export default {
   mounted () {
     console.log(this.parent)
   },
+  computed: {
+    ...mapState([
+      'count'
+    ])
+  },
   methods: {
     // 选择答案
     chooseOption (index, id) {
-      console.log('index==', index)
-      // this.chooseNum = index
-      // this.chooseId = id
+      this.chooseNum = index
+      this.chooseId = id
+    },
+
+    // 下一题
+    next () {
+      // TODO: vuex
     }
   }
 }
@@ -39,17 +52,27 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .topics {
-  // font-size: 20px;
-  // text-align: left;
-  // padding: .4rem 0 0 .5rem;
-  // li {
-  //   padding: .1rem 0;
-  //   .option-item {
-  //     &.option-has-choosed {
-  //       border: .02rem solid red;
-  //       border-radius: .15rem;
-  //     }
-  //   }
-  // }
+  font-size: 20px;
+  text-align: left;
+  padding: .4rem 0 0 .5rem;
+  ul {
+    li {
+      .option-item {
+        display: inline-block;
+        width: .2rem;
+        height: .2rem;
+        line-height: .2rem;
+        text-align: center;
+        box-sizing: border-box;
+        &.option-has-choosed {
+          border: .02rem solid red;
+          border-radius: .15rem;
+        }
+      }
+    }
+  }
+  button {
+    margin-top: .2rem;
+  }
 }
 </style>

@@ -27,6 +27,8 @@ export default {
   },
   components: {
     mainTopic
+  },
+  methods: {
   }
 }
 </script>
