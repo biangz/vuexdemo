@@ -10,7 +10,6 @@
           {{item.con}}
         </li>
     </ul>
-    <p>{{count}}</p>
     <button @click="next">下一题</button>
   </div>
 </template>
@@ -30,9 +29,7 @@ export default {
     console.log(this.parent)
   },
   computed: {
-    ...mapState([
-      'count'
-    ])
+    
   },
   methods: {
     // 选择答案
@@ -44,6 +41,7 @@ export default {
     // 下一题
     next () {
       // TODO: vuex
+      
     }
   }
 }
@@ -51,6 +49,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import '@/assets/styles/variables.scss';
+
 .topics {
   font-size: 20px;
   text-align: left;
@@ -72,7 +72,11 @@ export default {
     }
   }
   button {
-    margin-top: .2rem;
+    margin-top: 2rem;
+    padding: .1rem .3rem;
+    background: $theme;
+    border: none;
+    outline: none;
   }
 }
 </style>
