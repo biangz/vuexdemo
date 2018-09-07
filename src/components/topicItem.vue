@@ -49,8 +49,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import '@/assets/styles/variables.scss';
-
 .topics {
   font-size: 20px;
   text-align: left;
