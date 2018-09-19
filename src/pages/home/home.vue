@@ -1,8 +1,19 @@
 <template>
   <div class="container">
     <h1>vuex 里的 count {{count}}</h1>
-    <button @click="goto">开始</button>
-    <button @click="changeState">改变 vuex 的 count 状态</button>
+    <div class="btn-group">
+      <button @click="goto">开始</button>
+      <button @click="changeState">改变 vuex 的 count 状态</button>
+    </div>
+    <div class="test">
+      <button class="m-btn-mini btn-primary">以后养一只边牧</button>
+    </div>
+    <div class="test">
+      <button class="m-btn-sm">以后养一只边牧</button>
+    </div>
+    <div class="test">
+      <button class="m-btn-md">以后养一只边牧</button>
+    </div>
   </div>
 </template>
 
@@ -56,18 +67,23 @@ export default {
 .container {
   width: 100%;
   height: 100%;
-  background: #efefef;
+  background: #fff;
   text-align: center;
   h1 {
     font-size: .2rem;
     line-height: 1rem;
   }
-  button {
+  .btn-group {
     margin-top: 2rem;
-    padding: .1rem .3rem;
-    background: $theme;
-    border: none;
-    outline: none;
+    button {
+      padding: .1rem .3rem;
+      background: $theme;
+      border: none;
+      outline: none;
+    }
+  }
+  .test {
+    margin-top: 20px;
   }
 }
 </style>
