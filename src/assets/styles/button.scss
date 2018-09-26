@@ -10,7 +10,7 @@
   box-sizing: border-box;
   text-align: center;
   transition-property: all;
-  transition-duration: .6s;
+  transition-duration: .2s;
   transition-timing-function: linear;
   transition-delay: 0;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -64,5 +64,5 @@
 }
 
 .btn-primary {
-  @include color(green, red);
+  @include color($theme, #fff);
 }

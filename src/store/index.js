@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-Vue.use(Vuex)
-
 import { INCREMENT } from './mutation-types'
+
+Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
@@ -15,8 +15,8 @@ const store = new Vuex.Store({
      */
     [INCREMENT] (state, obj) {
       // 变更状态
-      if(typeof obj === 'object') {
-        return state.count += obj.count
+      if (typeof obj === 'object') {
+        state.count += obj.count
       }
       state.count += obj
     }

@@ -2,7 +2,7 @@
   <div class="topics">
     <p>{{parent.answerTitle}}</p>
     <ul>
-      <li 
+      <li
         v-for="(item, index) in parent.answerList"
         :key="item.id"
         @click="chooseOption(index, item.id)">
@@ -10,7 +10,7 @@
           {{item.con}}
         </li>
     </ul>
-    <button @click="next">下一题</button>
+    <button class="m-btn-md btn-primary" @click="next">下一题</button>
   </div>
 </template>
 
@@ -21,16 +21,14 @@ export default {
   data () {
     return {
       chooseNum: null, // 选择的答案
-      chooseId: null, // 选择的答案的 id
+      chooseId: null // 选择的答案的 id
     }
-  }, 
+  },
   props: ['parent'],
   mounted () {
     console.log(this.parent)
   },
-  computed: {
-    
-  },
+  computed: {},
   methods: {
     // 选择答案
     chooseOption (index, id) {
@@ -41,7 +39,6 @@ export default {
     // 下一题
     next () {
       // TODO: vuex
-      
     }
   }
 }
@@ -54,7 +51,9 @@ export default {
   text-align: left;
   padding: .4rem 0 0 .5rem;
   ul {
+    margin-top: .2rem;
     li {
+      line-height: .3rem;
       .option-item {
         display: inline-block;
         width: .2rem;
@@ -63,7 +62,7 @@ export default {
         text-align: center;
         box-sizing: border-box;
         &.option-has-choosed {
-          border: .02rem solid red;
+          border: .02rem solid $theme;
           border-radius: .15rem;
         }
       }
