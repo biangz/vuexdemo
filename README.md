@@ -1,6 +1,6 @@
 # vuexdemo
 
-> A Vue.js project
+> 学习练习的 vuex 的 demo ~~~~~~~，欢迎指导
 
 ## Build Setup
 
