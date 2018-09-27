@@ -71,7 +71,7 @@ export default {
     line-height: 1rem;
   }
   .btn-group {
-    margin-top: 2rem;
+    margin-top: 1rem;
     button {
       padding: .1rem .3rem;
       background: $theme;

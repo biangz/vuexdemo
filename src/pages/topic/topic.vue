@@ -1,33 +1,62 @@
 <template>
-  <div class="container">
-    <main-topic :parent="currentTopic"></main-topic>
+  <div class="container-wrap">
+    <main-topic :parent="topics[currentTopicIndex]" @handleChooseAnswer="handleChooseAnswer"></main-topic>
+    <button class="next m-btn-md btn-primary" @click="next">下一题</button>
   </div>
 </template>
 
 <script>
 import mainTopic from '@/components/topicItem'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   data () {
-    return {
-      currentTopic: {
-        answer: 1, // 正确的答案
-        answerList: [
-          {id: 0, con: '1111'},
-          {id: 1, con: '正确答案2222'},
-          {id: 2, con: '3333'},
-          {id: 3, con: '4444'}
-        ], // 选项
-        answerTitle: '题目一' // 标题
-      },
-
-      currentTopicIndex: 0 // 第几题
-    }
+    return {}
   },
+  created () {},
   components: {
     mainTopic
   },
   methods: {
+    // 本题答案
+    handleChooseAnswer (val) {
+      this.recordAnswer(val)
+    },
+
+    // 下一题
+    next () {
+      if (!this.currentTopicAnswer) {
+        return alert('请选择一个答案才能进入下一题啊！')
+      }
+
+      if (!(this.topics.length > this.currentTopicIndex + 1)) {
+        alert('这是最后一题啦')
+        return this.$router.push({path: '/result'})
+      }
+
+      this.changeTopicIndex()
+    },
+
+    ...mapMutations({
+      recordAnswer: 'RECORD_ANSWER',
+      changeTopicIndex: 'CURRENT_TOPIC_INDEX'
+    })
+  },
+  computed: {
+    ...mapState([
+      'topics',
+      'currentTopicIndex',
+      'currentTopicAnswer'
+    ])
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.container-wrap {
+  margin: .4rem;
+  .next {
+    margin-top: .4rem;
+  }
+}
+</style>

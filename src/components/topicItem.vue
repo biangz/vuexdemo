@@ -3,42 +3,34 @@
     <p>{{parent.answerTitle}}</p>
     <ul>
       <li
-        v-for="(item, index) in parent.answerList"
+        v-for="(item) in parent.answerList"
         :key="item.id"
-        @click="chooseOption(index, item.id)">
-          <span class="option-item" :class="{'option-has-choosed': chooseNum == index}"> · </span>
+        @click="chooseOption(item.id)">
+          <span class="option-item" :class="{'option-has-choosed': chooseAnswerId == item.id}"> · </span>
           {{item.con}}
         </li>
     </ul>
-    <button class="m-btn-md btn-primary" @click="next">下一题</button>
+
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+// import { mapState } from 'vuex'
 
 export default {
   data () {
     return {
-      chooseNum: null, // 选择的答案
-      chooseId: null // 选择的答案的 id
+      chooseAnswerId: null // 选择的答案的 id
     }
   },
   props: ['parent'],
-  mounted () {
-    console.log(this.parent)
-  },
+  mounted () {},
   computed: {},
   methods: {
     // 选择答案
-    chooseOption (index, id) {
-      this.chooseNum = index
-      this.chooseId = id
-    },
-
-    // 下一题
-    next () {
-      // TODO: vuex
+    chooseOption (id) {
+      this.$emit('handleChooseAnswer', id)
+      this.chooseAnswerId = id
     }
   }
 }
@@ -49,7 +41,7 @@ export default {
 .topics {
   font-size: 20px;
   text-align: left;
-  padding: .4rem 0 0 .5rem;
+  // padding: .4rem 0 0 .5rem;
   ul {
     margin-top: .2rem;
     li {
