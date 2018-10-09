@@ -5,10 +5,11 @@
       <li
         v-for="(item) in parent.answerList"
         :key="item.id"
-        @click="chooseOption(item.id)">
-          <span class="option-item" :class="{'option-has-choosed': chooseAnswerId == item.id}"> · </span>
-          {{item.con}}
-        </li>
+        @click="chooseOption(item.id)"
+      >
+        <span class="option-item" :class="{'is-active': chooseAnswerId == item.id}"> · </span>
+        {{item.con}}
+      </li>
     </ul>
 
   </div>
@@ -41,11 +42,13 @@ export default {
 .topics {
   font-size: 20px;
   text-align: left;
-  // padding: .4rem 0 0 .5rem;
+
   ul {
     margin-top: .2rem;
+
     li {
       line-height: .3rem;
+
       .option-item {
         display: inline-block;
         width: .2rem;
@@ -53,13 +56,15 @@ export default {
         line-height: .2rem;
         text-align: center;
         box-sizing: border-box;
-        &.option-has-choosed {
+
+        &.is-active {
           border: .02rem solid $theme;
           border-radius: .15rem;
         }
       }
     }
   }
+
   button {
     margin-top: 2rem;
     padding: .1rem .3rem;

@@ -1,6 +1,9 @@
 <template>
   <div class="container-wrap">
-    <main-topic :parent="topics[currentTopicIndex]" @handleChooseAnswer="handleChooseAnswer"></main-topic>
+    <main-topic
+      :parent="topics[currentTopicIndex]"
+      @handleChooseAnswer="handleChooseAnswer"
+    ></main-topic>
     <button class="next m-btn-md btn-primary" @click="next">下一题</button>
   </div>
 </template>
