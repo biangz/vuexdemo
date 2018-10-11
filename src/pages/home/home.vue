@@ -74,7 +74,7 @@ export default {
     margin-top: 1rem;
     button {
       padding: .1rem .3rem;
-      background: $theme;
+      background: $primary-theme;
       border: none;
       outline: none;
     }

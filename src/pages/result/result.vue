@@ -41,7 +41,7 @@ export default {
       list-style: circle;
       font-size: .16rem;
       line-height: .24rem;
-      color: $theme;
+      color: $primary-theme;
     }
   }
 }

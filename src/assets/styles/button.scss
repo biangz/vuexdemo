@@ -64,5 +64,5 @@
 }
 
 .btn-primary {
-  @include color($theme, #fff);
+  @include color($primary-theme, #fff);
 }

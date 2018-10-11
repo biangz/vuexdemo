@@ -7,7 +7,9 @@
         :key="item.id"
         @click="chooseOption(item.id)"
       >
-        <span class="option-item" :class="{'is-active': chooseAnswerId == item.id}"> · </span>
+        <span class="option-item">
+          <v-icon :name="chooseAnswerId == item.id?'check-circle':'regular/circle'"/>
+        </span>
         {{item.con}}
       </li>
     </ul>
@@ -16,7 +18,6 @@
 </template>
 
 <script>
-// import { mapState } from 'vuex'
 
 export default {
   data () {
@@ -56,9 +57,10 @@ export default {
         line-height: .2rem;
         text-align: center;
         box-sizing: border-box;
+        color: $primary-grey;
 
         &.is-active {
-          border: .02rem solid $theme;
+          border: .02rem solid $primary-theme;
           border-radius: .15rem;
         }
       }
@@ -68,7 +70,7 @@ export default {
   button {
     margin-top: 2rem;
     padding: .1rem .3rem;
-    background: $theme;
+    background: $primary-theme;
     border: none;
     outline: none;
   }
