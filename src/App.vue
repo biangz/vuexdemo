@@ -13,6 +13,6 @@ export default {
 <style lang="scss">
 @import '@/assets/styles/base.scss';
 #app {
-  min-height: 100%;
+  height: 100%;
 }
 </style>

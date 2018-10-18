@@ -6,7 +6,7 @@
       <button class="m-btn-md btn-primary" @click="changeState">改变 vuex 的 count 状态</button>
     </div>
     <div class="test">
-      <button class="m-btn-mini btn-primary">以后养一只边牧</button>
+      <button class="m-btn-mini">以后养一只边牧</button>
     </div>
     <div class="test">
       <button class="m-btn-sm">以后养一只边牧</button>
@@ -74,13 +74,14 @@ export default {
     margin-top: 1rem;
     button {
       padding: .1rem .3rem;
-      background: $primary-theme;
-      border: none;
-      outline: none;
+      background: $background-theme;
     }
   }
   .test {
-    margin-top: 20px;
+    margin-top: .1rem;
+  }
+  button {
+    @include color($background-theme, #fff)
   }
 }
 </style>

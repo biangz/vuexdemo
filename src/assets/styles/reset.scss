@@ -87,17 +87,6 @@ video {
   vertical-align: baseline;
 }
 
-html,
-body {
-  height: 100%;
-  background: #f0f0f0;
-  font-size: 14px;
-}
-
-#app {
-  height: 100%;
-}
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -151,39 +140,5 @@ li {
 }
 
 input::-webkit-input-placeholder {
-  color: #c0c4cc;
-}
-
-input::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #c0c4cc;
-}
-
-input:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #c0c4cc;
-}
-
-input:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #c0c4cc;
-}
-
-textarea::-webkit-input-placeholder {
-  color: #c0c4cc;
-}
-
-textarea::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #c0c4cc;
-}
-
-textarea:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #c0c4cc;
-}
-
-textarea:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: #c0c4cc;
 }

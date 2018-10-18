@@ -4,7 +4,7 @@
       :parent="topics[currentTopicIndex]"
       @handleChooseAnswer="handleChooseAnswer"
     ></main-topic>
-    <button class="next m-btn-md btn-primary" @click="next">下一题</button>
+    <button class="next m-btn-md" @click="next">下一题</button>
   </div>
 </template>
 
@@ -60,6 +60,7 @@ export default {
   margin: .4rem;
   .next {
     margin-top: .4rem;
+    @include color($background-theme, #fff)
   }
 }
 </style>

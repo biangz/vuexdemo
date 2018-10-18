@@ -66,13 +66,5 @@ export default {
       }
     }
   }
-
-  button {
-    margin-top: 2rem;
-    padding: .1rem .3rem;
-    background: $primary-theme;
-    border: none;
-    outline: none;
-  }
 }
 </style>
