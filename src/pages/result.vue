@@ -1,5 +1,5 @@
 <template>
-  <div class="result">
+  <div class="result container">
     <p>你选择的答案是：</p>
     <ul>
       <li v-for="item in result" :key="item">{{item}}</li>
@@ -18,12 +18,12 @@ export default {
     }
   },
   mounted () {
-    this.result = this.answerList
+    this.result = this.topicLists
     this.result = Object.values(this.result)
   },
   computed: {
     ...mapState([
-      'answerList'
+      'topicLists'
     ])
   }
 }
@@ -32,11 +32,14 @@ export default {
 <style lang="scss" scoped>
 .result {
   padding: .3rem;
+
   p {
     font-size: .2rem;
   }
+
   ul {
     margin-top: .1rem;
+
     li{
       list-style: circle;
       font-size: .16rem;

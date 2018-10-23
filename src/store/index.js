@@ -1,36 +1,29 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import action from './actions'
 import { state } from './state'
-import { INCREMENT, RECORD_ANSWER, CURRENT_TOPIC_INDEX } from './mutation-types'
+import * as types from './mutation-types'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: state,
+  action: action,
   mutations: {
-    /**
-     * @param {*} state store 的 state
-     * @param {*} obj 可包含多个字段， mutation 更容易读
-     */
+
     // count 测试数据
-    [INCREMENT] (state, obj) {
-      // 变更状态
-      if (typeof obj === 'object') {
-        state.count += obj.count
-      }
-      state.count += obj
+    [types.INCREMENT] (state, payload) {
+      state.count += payload.count
     },
 
     // 答案记录
-    [RECORD_ANSWER] (state, val) {
-      state.currentTopicAnswer = val
-      state.answerList[state.currentTopicIndex] = val
+    [types.RECORD_ANSWER] (state, payload) {
+      state.answerList.push(payload.answer)
     },
 
     // 题目索引
-    [CURRENT_TOPIC_INDEX] (state, index) {
-      state.currentTopicIndex++
-      state.currentTopicAnswer = null
+    [types.TOPIC_INDEX] (state, index) {
+      state.topicIndex++
     }
   }
 })

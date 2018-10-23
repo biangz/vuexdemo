@@ -1,9 +1,9 @@
 <template>
-  <div class="topics">
+  <div class="topics container">
     <p>{{parent.answerTitle}}</p>
     <ul>
       <li
-        v-for="(item) in parent.answerList"
+        v-for="(item) in parent.topicLists"
         :key="item.id"
         @click="chooseOption(item.id)"
       >
@@ -26,8 +26,6 @@ export default {
     }
   },
   props: ['parent'],
-  mounted () {},
-  computed: {},
   methods: {
     // 选择答案
     chooseOption (id) {
