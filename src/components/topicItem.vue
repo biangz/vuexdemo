@@ -1,21 +1,23 @@
 <template>
-  <div class="topics">
+  <div class="topics container">
     <p>{{parent.answerTitle}}</p>
     <ul>
       <li
-        v-for="(item) in parent.answerList"
+        v-for="(item) in parent.topicLists"
         :key="item.id"
-        @click="chooseOption(item.id)">
-          <span class="option-item" :class="{'option-has-choosed': chooseAnswerId == item.id}"> · </span>
-          {{item.con}}
-        </li>
+        @click="chooseOption(item.id)"
+      >
+        <span class="option-item">
+          <v-icon :name="chooseAnswerId == item.id?'check-circle':'regular/circle'"/>
+        </span>
+        {{item.con}}
+      </li>
     </ul>
 
   </div>
 </template>
 
 <script>
-// import { mapState } from 'vuex'
 
 export default {
   data () {
@@ -24,8 +26,6 @@ export default {
     }
   },
   props: ['parent'],
-  mounted () {},
-  computed: {},
   methods: {
     // 选择答案
     chooseOption (id) {
@@ -41,11 +41,13 @@ export default {
 .topics {
   font-size: 20px;
   text-align: left;
-  // padding: .4rem 0 0 .5rem;
+
   ul {
     margin-top: .2rem;
+
     li {
       line-height: .3rem;
+
       .option-item {
         display: inline-block;
         width: .2rem;
@@ -53,19 +55,14 @@ export default {
         line-height: .2rem;
         text-align: center;
         box-sizing: border-box;
-        &.option-has-choosed {
-          border: .02rem solid $theme;
+        color: $primary-grey;
+
+        &.is-active {
+          border: .02rem solid $primary-theme;
           border-radius: .15rem;
         }
       }
     }
-  }
-  button {
-    margin-top: 2rem;
-    padding: .1rem .3rem;
-    background: $theme;
-    border: none;
-    outline: none;
   }
 }
 </style>

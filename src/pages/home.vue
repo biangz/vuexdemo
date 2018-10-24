@@ -1,18 +1,9 @@
 <template>
-  <div class="container">
+  <div class="home container">
     <h1>vuex 里的 count {{count}}</h1>
     <div class="btn-group">
       <button class="m-btn-md btn-primary" @click="goto">开始</button>
       <button class="m-btn-md btn-primary" @click="changeState">改变 vuex 的 count 状态</button>
-    </div>
-    <div class="test">
-      <button class="m-btn-mini btn-primary">以后养一只边牧</button>
-    </div>
-    <div class="test">
-      <button class="m-btn-sm">以后养一只边牧</button>
-    </div>
-    <div class="test">
-      <button class="m-btn-md">以后养一只边牧</button>
     </div>
   </div>
 </template>
@@ -30,7 +21,9 @@ export default {
     },
     changeState () {
       // 一、mapMuattion 方式提交
-      this.increment(2)
+      this.increment({
+        count: 2
+      })
 
       /**
        * 二、没有用 mapMutation 方式
@@ -61,26 +54,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  width: 100%;
-  height: 100%;
-  background: #fff;
+.home {
   text-align: center;
+
   h1 {
     font-size: .2rem;
     line-height: 1rem;
   }
+
   .btn-group {
     margin-top: 1rem;
+
     button {
       padding: .1rem .3rem;
-      background: $theme;
-      border: none;
-      outline: none;
+      background: $background-color;
     }
   }
-  .test {
-    margin-top: 20px;
+
+  button {
+    @include color($background-color, #fff)
   }
 }
 </style>

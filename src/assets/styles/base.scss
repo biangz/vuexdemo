@@ -1,2 +1,18 @@
+@charset 'utf-8';
+
 @import './button.scss';
 @import './reset.scss';
+
+html,
+body {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 640px;
+  font-size: 14px;
+  background: #f0f0f0;
+  
+  .container {
+    min-height: 100%;
+    background: #fff;
+  }
+}

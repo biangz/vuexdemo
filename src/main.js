@@ -3,11 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
 import store from '@/store/index'
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+
 import '@/assets/styles/reset.scss'
 import '@/assets/js/rem'
 
+Vue.component('v-icon', Icon)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
