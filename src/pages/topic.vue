@@ -7,7 +7,6 @@
     <button class="next m-btn-md" @click="next">下一题</button>
   </div>
 </template>
-
 <script>
 import mainTopic from '@/components/topicItem'
 import { mapState, mapActions } from 'vuex'
@@ -33,6 +32,9 @@ export default {
 
       return this.nextTopic({
         answer: this.answer
+      }).then(re => {
+        if (!re) { return false }
+        this.$router.replace({path: '/result'})
       })
     },
 

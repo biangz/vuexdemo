@@ -2,7 +2,7 @@
   <div class="result container">
     <p>你选择的答案是：</p>
     <ul>
-      <li v-for="item in result" :key="item">{{item}}</li>
+      <li v-for="item in answerList" :key="item">{{item}}</li>
     </ul>
     <p>😆😆😆😆😆😆😆😆😆😆😆😆</p>
   </div>
@@ -18,12 +18,11 @@ export default {
     }
   },
   mounted () {
-    this.result = this.topicLists
-    this.result = Object.values(this.result)
+    this.result = Object.values(this.answerList)
   },
   computed: {
     ...mapState([
-      'topicLists'
+      'answerList'
     ])
   }
 }

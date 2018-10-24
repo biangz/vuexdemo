@@ -4,11 +4,13 @@ import action from './actions'
 import { state } from './state'
 import * as types from './mutation-types'
 
+console.log('actions++++++++', action)
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: state,
-  action: action,
+  actions: action,
   mutations: {
 
     // count 测试数据

@@ -2,7 +2,7 @@ const state = {
   count: 0,
   topicIndex: 0, // 当前题目索引值
   currentTopicAnswer: null, // 当前题目的答案
-  answerList: {}, // 答案集合
+  answerList: [], // 答案集合
   topics: [
     {
       answer: 'correct1', // 正确的答案
