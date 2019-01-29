@@ -1,11 +1,12 @@
-<template>
-  <div class="result container">
-    <p>你选择的答案是：</p>
-    <ul>
-      <li v-for="item in answerList" :key="item">{{item}}</li>
-    </ul>
-    <p>😆😆😆😆😆😆😆😆😆😆😆😆</p>
-  </div>
+<template lang="pug">
+  div.result.container
+    p 你选择的答案是：
+    ul
+      li(
+        v-for="item in answerList"
+        :key="item"
+      ) {{item}}
+    p 😆😆😆😆😆😆😆😆😆😆😆😆
 </template>
 
 <script>

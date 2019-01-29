@@ -1,11 +1,10 @@
-<template>
-  <div class="home container">
-    <h1>vuex 里的 count {{count}}</h1>
-    <div class="btn-group">
-      <button class="m-btn-md btn-primary" @click="goto">开始</button>
-      <button class="m-btn-md btn-primary" @click="changeState">改变 vuex 的 count 状态</button>
-    </div>
-  </div>
+
+<template lang="pug">
+  div.home.container
+    h1 vuex 里的 count {{count}}
+    div.btn-group
+      button.m-btn-md.btn-primary(@click="goto") 开始
+      button.m-btn-md.btn-primary(@click="changeState") 改变 vuex 的 count 状态
 </template>
 
 <script>

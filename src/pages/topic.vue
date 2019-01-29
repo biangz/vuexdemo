@@ -1,12 +1,12 @@
-<template>
-  <div class="topic container">
-    <main-topic
+<template lang="pug">
+  div.topic.container
+    main-topic(
       :parent="topics[topicIndex]"
       @handleChooseAnswer="handleChooseAnswer"
-    ></main-topic>
-    <button class="next m-btn-md" @click="next">下一题</button>
-  </div>
+    )
+    button.next.m-btn-md(@click="next") 下一题
 </template>
+
 <script>
 import mainTopic from '@/components/topicItem'
 import { mapState, mapActions } from 'vuex'
